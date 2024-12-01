@@ -1,4 +1,4 @@
-const filterProducts = (produkty, { kategoria, minCena = 0, maxCena = Infinity } = {}) => {
+const filterProducts = (produkty, { kategoria, minCena = 0, maxCena} = {}) => {
     let filteredProducts = produkty.filter(produkt => {
         const { cena, kategoria: kategoriaProduktu } = produkt;
         const wKategorii = kategoria ? kategoriaProduktu === kategoria : true;
@@ -7,7 +7,7 @@ const filterProducts = (produkty, { kategoria, minCena = 0, maxCena = Infinity }
     });
 
     return filteredProducts.map(({ nazwa, cena, kategoria }) => 
-        `Produkt: ${nazwa}, Cena: $${cena}, Kategoria: ${kategoria}`).join('\n');
+        `Produkt: ${nazwa}, Cena: $${cena}, Kategoria: ${kategoria}`);
 };
 
 const produkty = [
